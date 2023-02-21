@@ -25,6 +25,8 @@ function GetOpperation{
         Write-Host "3) Deploy baseline"-ForegroundColor Green
         Write-Host "4) Generate baseline reports"-ForegroundColor Green
         Write-Host "5) Generate comparison reports"-ForegroundColor Green
+        Write-Host "6) Check Backup Status"-ForegroundColor Green
+        Write-Host "7) Backup"-ForegroundColor Green
         Write-Host ""
 
         $Selected = Read-Host -Prompt "Please enter an opperation"
@@ -46,10 +48,12 @@ function GetOpperation{
             GetOpperation
         }
         elseif ($Selected -eq 6) {
-            Write-Host " Option 6"
+            Git_Status
+            GetOpperation
         }
         elseif ($Selected -eq 7) {
-            Write-Host " Option 7"
+            Backup  
+            GetOpperation
         }
         elseif ($Selected -eq 8) {
             Write-Host " Option 8"
@@ -152,6 +156,16 @@ Function Generate_Delta_Report{
     }
 }
 
+
+Function Git_Status{
+    git status
+}
+
+Function Backup{
+    $timestamp = Get-Date -Format 'yyyy-MM-dd HH:mm:ss'
+    git add .
+    git commit -m $timestamp
+}
 
 ######################################################################
 ######################## End Functions ###################################
