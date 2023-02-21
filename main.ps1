@@ -23,14 +23,13 @@ function GetOpperation{
         Write-Host "-----------------------------------------------------------------"`n -ForegroundColor Green
         Write-Host "0) Exit" -ForegroundColor Green
         Write-Host "1) List tenants" -ForegroundColor Green
-        Write-Host "2) Export Baseline"-ForegroundColor Green
+        Write-Host "2) Export baseline"-ForegroundColor Green
         Write-Host "3) Deploy baseline"-ForegroundColor Green
         Write-Host "4) Generate baseline reports"-ForegroundColor Green
         Write-Host "5) Generate comparison reports"-ForegroundColor Green
         Write-Host "6) Deploy Config"-ForegroundColor Green
         Write-Host "7) Check Backup Status"-ForegroundColor Green
         Write-Host "8) Backup"-ForegroundColor Green
-      
         Write-Host ""
 
         $Selected = Read-Host -Prompt "Please enter an opperation"
