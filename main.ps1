@@ -18,15 +18,19 @@ function Write-Log
 function GetOpperation{
     [CmdletBinding()]param ([System.Int32]$Selected)
     try{
+        write-host ""
         Write-Host "Select Opperation to perform" -ForegroundColor Green
         Write-Host "-----------------------------------------------------------------"`n -ForegroundColor Green
+        Write-Host "0) Exit" -ForegroundColor Green
         Write-Host "1) List tenants" -ForegroundColor Green
         Write-Host "2) Export Baseline"-ForegroundColor Green
         Write-Host "3) Deploy baseline"-ForegroundColor Green
         Write-Host "4) Generate baseline reports"-ForegroundColor Green
         Write-Host "5) Generate comparison reports"-ForegroundColor Green
-        Write-Host "6) Check Backup Status"-ForegroundColor Green
-        Write-Host "7) Backup"-ForegroundColor Green
+        Write-Host "6) Deploy Config"-ForegroundColor Green
+        Write-Host "7) Check Backup Status"-ForegroundColor Green
+        Write-Host "8) Backup"-ForegroundColor Green
+      
         Write-Host ""
 
         $Selected = Read-Host -Prompt "Please enter an opperation"
@@ -48,18 +52,23 @@ function GetOpperation{
             GetOpperation
         }
         elseif ($Selected -eq 6) {
-            Git_Status
+            Write-Host 'To Do'
             GetOpperation
         }
         elseif ($Selected -eq 7) {
-            Backup  
+            Git_Status
             GetOpperation
         }
         elseif ($Selected -eq 8) {
-            Write-Host " Option 8"
+            Backup  
+            GetOpperation
+        }
+        elseif ($Selected -eq 0) {
+            Write-Host " Exiting ..."
+            exit
         }
         elseif ($Selected -eq 9) {
-            exit
+            
         }
         else{
             Write-Log "[ERROR] Invalid selection!"
