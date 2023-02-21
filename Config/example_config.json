@@ -1,0 +1,12 @@
+{
+    "AppId": "APP_ID",
+    "TenantId": "TENANT_ID",
+    "CertificateThumbprint" : "YOUR_CERT_THUMBPRINT" ,
+    "Secret" : "YOUR_SECRET",
+    "Baseline": "baseline_tanant.onmicrosoft.com",
+    "Tenants":[
+        "tenant1.onmicrosoft.com",
+        "tenant2.onmicrosoft.com",
+        "tenant3.onmicrosoft.com"
+    ]
+}
