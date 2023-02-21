@@ -1,3 +1,4 @@
 *.cer
+*.log
 Docs/
 Config/config.json
